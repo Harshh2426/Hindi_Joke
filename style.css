@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root{
+    --text-color: #fff;
+    --toggle-text-color: black;
+    --bg-color: black;
+    --toggle-bg-color: #fff;
+    --body-color: rgb(47, 47, 46);
+    --toogle-body-color: rgb(175, 171, 171);
+  }
+  html{
+    font-size: 62.5%;
+  }
+  body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--body-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Edu SA Beginner', cursive;
+    font-weight: 600;
+  }
+  body.active{
+    background-color: var(--toogle-body-color);
+  }
+  .toggler{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 5rem;
+    color: var(--text-color);
+  }
+  .toggler i{
+    cursor: pointer;
+  }
+  .toggler [name="sun"]{
+    display:none;
+  }
+
+  body.active .toggler [name="sun"]{
+    display: block;
+  }
+
+  body.active .toggler [name="moon"]{
+    display: none;
+  }
+
+  .wrapper{
+    max-width: 80vw;
+    padding: 50px 40px;
+    min-height: 40vh;
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 2px rgb(19, 17, 17);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  body.active .wrapper{
+    background-color: var(--toggle-bg-color);
+    box-shadow: 0px 0px 5px 2px rgb(189, 186, 186);
+  }
+  .emoji{
+    display: block;
+    text-align: center;
+    font-size: 15rem;
+  }
+  #joke{
+    font-size: 2rem;
+    text-align: center;
+    color: var(--text-color);
+  }
+  body.active #joke{
+    color: var(--toggle-text-color);
+  }
+
+  #btn{
+    padding: 1rem 1.5rem;
+    border-radius: 0.2rem;
+    font-size: 1.8rem;
+    background-color: var(--toggle-bg-color);
+    color: var(--bg-color);
+    transition: all 0.5s ease;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  #btn:hover{
+    background-color: rgb(159, 157, 157);
+    color: rgb(42, 42, 42);
+  }
+  body.active #btn{
+    background-color: var(--bg-color);
+    color: var(--toggle-bg-color);
+  }
+  body.active #btn:hover{
+    background-color: rgb(42, 42, 42);
+    color: rgb(177, 175, 175);
+  }
